@@ -11,6 +11,7 @@ License:	UNKNOWN
 Vendor:		Robin Dunn <robin@alldunn.com>
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
+# Source0-md5:	a99ceebb787749123a9075a93eb3601b
 URL:		http://PyBSDDB.sourceforge.net/
 Obsoletes:	bsddb3
 Obsoletes:	python-bsddb3
