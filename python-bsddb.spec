@@ -11,7 +11,6 @@ Source0:	http://dl.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
 # Source0-md5:	d2dbdc7300388d678aed6f7a312bbdbf
 URL:		http://PyBSDDB.sourceforge.net/
 BuildRequires:	python-devel >= 1:2.3
-BuildRequires:	rpm-pythonprov
 BuildRequires:	db-devel >= 4.1.25
 %pyrequires_eq	python-lib
 Obsoletes:	bsddb3
