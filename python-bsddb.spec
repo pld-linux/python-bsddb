@@ -10,7 +10,7 @@ Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
 # Source0-md5:	e7cf57b849e63e0a2dd791d9ad5a377a
 URL:		http://PyBSDDB.sourceforge.net/
-BuildRequires:	python-devel >= 2.3
+BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	rpm-pythonprov
 BuildRequires:	db-devel >= 4.1.25
 %pyrequires_eq	python-modules
