@@ -2,9 +2,9 @@
 %include /usr/lib/rpm/macros.python
 %define	pname	bsddb3
 
-Summary:	Python interface for BerkeleyDB 3.1 and 3.2
-Summary(pl):	Interfejs Pythona do BerkeleyDB 3.1 i 3.2
-Name:		python-bsddb3
+Summary:	Python interface for BerkeleyDB
+Summary(pl):	Interfejs Pythona do BerkeleyDB
+Name:		python-bsddb
 Version:	3.4.0
 Release:	1
 License:	UNKNOWN
@@ -14,6 +14,7 @@ Source0:	http://prdownloads.sf.net/pybsddb/%{pname}-%{version}.tar.gz
 Patch0:		%{name}-db4.patch
 URL:		http://PyBSDDB.sourceforge.net/
 Obsoletes:	bsddb3
+Obsoletes:	python-bsddb3
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
 BuildRequires:	db4-devel
