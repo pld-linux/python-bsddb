@@ -5,7 +5,7 @@
 Summary:	Python interface for BerkeleyDB
 Summary(pl):	Interfejs Pythona do BerkeleyDB
 Name:		python-bsddb
-Version:	4.1.1
+Version:	4.1.3
 Release:	1
 License:	UNKNOWN
 Vendor:		Robin Dunn <robin@alldunn.com>
