@@ -5,13 +5,13 @@
 Summary:	Python interface for BerkeleyDB
 Summary(pl):	Interfejs Pythona do BerkeleyDB
 Name:		python-bsddb
-Version:	4.1.3
-Release:	2
+Version:	4.2.4
+Release:	1
 License:	UNKNOWN
 Vendor:		Robin Dunn <robin@alldunn.com>
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
-# Source0-md5:	a99ceebb787749123a9075a93eb3601b
+# Source0-md5:	e7cf57b849e63e0a2dd791d9ad5a377a
 URL:		http://PyBSDDB.sourceforge.net/
 BuildRequires:	python-devel >= 2.3
 BuildRequires:	rpm-pythonprov
