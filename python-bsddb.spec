@@ -1,5 +1,5 @@
 
-%include /usr/lib/rpm/macros.python
+%include	/usr/lib/rpm/macros.python
 %define	pname	bsddb3
 
 Summary:	Python interface for BerkeleyDB
