@@ -10,7 +10,7 @@ Release:	1
 License:	UNKNOWN
 Vendor:		Robin Dunn <robin@alldunn.com>
 Group:		Development/Languages/Python
-Source0:	http://prdownloads.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
 URL:		http://PyBSDDB.sourceforge.net/
 Obsoletes:	bsddb3
 Obsoletes:	python-bsddb3
