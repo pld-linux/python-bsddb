@@ -57,7 +57,7 @@ rm -f $RPM_BUILD_ROOT/%{py_sitedir}/bsddb3/tests/*.py
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %doc *.txt docs/ README.txt
 %dir %{py_sitedir}/bsddb3
