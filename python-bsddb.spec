@@ -13,12 +13,12 @@ Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
 # Source0-md5:	a99ceebb787749123a9075a93eb3601b
 URL:		http://PyBSDDB.sourceforge.net/
-Obsoletes:	bsddb3
-Obsoletes:	python-bsddb3
 BuildRequires:	python-devel >= 2.3
 BuildRequires:	rpm-pythonprov
 BuildRequires:	db-devel >= 4.1.25
 %pyrequires_eq	python-modules
+Obsoletes:	bsddb3
+Obsoletes:	python-bsddb3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,15 +51,15 @@ rm -rf $RPM_BUILD_ROOT
 python -- setup.py --berkeley-db=/usr install --root=$RPM_BUILD_ROOT --optimize=2
 
 # shutup check-files
-rm -f $RPM_BUILD_ROOT/%{py_sitedir}/bsddb3/*.py
-rm -f $RPM_BUILD_ROOT/%{py_sitedir}/bsddb3/tests/*.py
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/*.py
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/tests/*.py
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt docs/ README.txt
+%doc *.txt docs README.txt
 %dir %{py_sitedir}/bsddb3
 %dir %{py_sitedir}/bsddb3/tests
 %{py_sitedir}/bsddb3/*.py?
