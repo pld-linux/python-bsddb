@@ -1,6 +1,4 @@
-
-%define	pname	bsddb3
-
+%define		pname	bsddb3
 Summary:	Python interface for BerkeleyDB
 Summary(pl):	Interfejs Pythona do BerkeleyDB
 Name:		python-bsddb
