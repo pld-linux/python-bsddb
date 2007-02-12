@@ -1,6 +1,6 @@
 %define		pname	bsddb3
 Summary:	Python interface for BerkeleyDB
-Summary(pl):	Interfejs Pythona do BerkeleyDB
+Summary(pl.UTF-8):   Interfejs Pythona do BerkeleyDB
 Name:		python-bsddb
 Version:	4.3.3
 Release:	2
@@ -27,14 +27,14 @@ fully supported in the Python wrappers. Please see the documents in
 the docs directory of the source distribution or at the website for
 more details on the types and methods provided.
 
-%description -l pl
-Ten modu³ dostarcza prawie ca³kowite opakowanie API C Sleepycat do
-obiektów ¶rodowiska baz danych, baz danych, kursorów i transakcji, z
-których ka¿dy jest udostêpniony jako pythonowy typ w module bsddb3.db.
-Obiekty bazy danych mog± u¿ywaæ ró¿nych metod dostêpu: btree, hash,
-recno i queue. Jest to pierwsza implementacja obs³ugi tych obiektów
-dla Pythona. Wiêcej szczegó³ów o typach i metodach znajduje siê w
-za³±czonej dokumentacji lub na stronie WWW.
+%description -l pl.UTF-8
+Ten moduÅ‚ dostarcza prawie caÅ‚kowite opakowanie API C Sleepycat do
+obiektÃ³w Å›rodowiska baz danych, baz danych, kursorÃ³w i transakcji, z
+ktÃ³rych kaÅ¼dy jest udostÄ™pniony jako pythonowy typ w module bsddb3.db.
+Obiekty bazy danych mogÄ… uÅ¼ywaÄ‡ rÃ³Å¼nych metod dostÄ™pu: btree, hash,
+recno i queue. Jest to pierwsza implementacja obsÅ‚ugi tych obiektÃ³w
+dla Pythona. WiÄ™cej szczegÃ³Å‚Ã³w o typach i metodach znajduje siÄ™ w
+zaÅ‚Ä…czonej dokumentacji lub na stronie WWW.
 
 %prep
 %setup -q -n %{pname}-%{version}
