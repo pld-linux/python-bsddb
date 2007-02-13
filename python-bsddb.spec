@@ -1,6 +1,6 @@
 %define		pname	bsddb3
 Summary:	Python interface for BerkeleyDB
-Summary(pl.UTF-8):   Interfejs Pythona do BerkeleyDB
+Summary(pl.UTF-8):	Interfejs Pythona do BerkeleyDB
 Name:		python-bsddb
 Version:	4.3.3
 Release:	2
