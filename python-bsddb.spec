@@ -2,16 +2,15 @@
 Summary:	Python interface for BerkeleyDB
 Summary(pl.UTF-8):	Interfejs Pythona do BerkeleyDB
 Name:		python-bsddb
-Version:	4.3.3
-Release:	2
+Version:	4.6.3
+Release:	1
 License:	BSD-like w/o adv. clause
-Vendor:		Robin Dunn <robin@alldunn.com>
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/pybsddb/%{pname}-%{version}.tar.gz
-# Source0-md5:	b3a18a3315d6e1d8d55779d89940a07c
-URL:		http://PyBSDDB.sourceforge.net/
-BuildRequires:	python-devel >= 1:2.3
+Source0:	http://pypi.python.org/packages/source/b/bsddb3/bsddb3-%{version}.tar.gz
+# Source0-md5:	fb3abca62477b88712d44924a2ea10ea
+URL:		http://www.argo.es/~jcea/programacion/pybsddb.htm
 BuildRequires:	db-devel >= 4.1.25
+BuildRequires:	python-devel >= 1:2.3
 %pyrequires_eq	python-modules
 Obsoletes:	bsddb3
 Obsoletes:	python-bsddb3
@@ -40,11 +39,16 @@ załączonej dokumentacji lub na stronie WWW.
 %setup -q -n %{pname}-%{version}
 
 %build
-env CFLAGS="%{rpmcflags}" python setup.py --berkeley-db=/usr build
+env CFLAGS="%{rpmcflags}" python setup.py \
+	--berkeley-db-libdir=%{_libdir} \
+	--berkeley-db=%{_prefix} \
+	build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python -- setup.py --berkeley-db=/usr install --root=$RPM_BUILD_ROOT --optimize=2
+python -- setup.py install \
+	--root=$RPM_BUILD_ROOT \
+	--optimize=2 \
 
 # shutup check-files
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/*.py
@@ -55,9 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt docs README.txt
+%doc *.txt docs
 %dir %{py_sitedir}/bsddb3
 %dir %{py_sitedir}/bsddb3/tests
-%{py_sitedir}/bsddb3/*.py?
-%{py_sitedir}/bsddb3/tests/*.py?
+%{py_sitedir}/bsddb3/*.py[co]
+%{py_sitedir}/bsddb3/tests/*.py[co]
 %attr(755,root,root) %{py_sitedir}/bsddb3/*.so
