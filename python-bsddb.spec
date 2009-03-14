@@ -2,12 +2,12 @@
 Summary:	Python interface for BerkeleyDB
 Summary(pl.UTF-8):	Interfejs Pythona do BerkeleyDB
 Name:		python-bsddb
-Version:	4.6.3
+Version:	4.7.5
 Release:	1
 License:	BSD-like w/o adv. clause
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/bsddb3/bsddb3-%{version}.tar.gz
-# Source0-md5:	fb3abca62477b88712d44924a2ea10ea
+# Source0-md5:	8f0773f5de160c39263f5af9ead1d0dc
 URL:		http://www.argo.es/~jcea/programacion/pybsddb.htm
 BuildRequires:	db-devel >= 4.1.25
 BuildRequires:	python-devel >= 1:2.3
@@ -59,9 +59,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt docs
+%doc *.txt docs PKG-INFO 
+%dir %{py_incdir}/bsddb3
 %dir %{py_sitedir}/bsddb3
 %dir %{py_sitedir}/bsddb3/tests
+%{py_incdir}/bsddb3/bsddb.h
 %{py_sitedir}/bsddb3/*.py[co]
 %{py_sitedir}/bsddb3/tests/*.py[co]
 %attr(755,root,root) %{py_sitedir}/bsddb3/*.so
