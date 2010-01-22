@@ -12,6 +12,8 @@ Source0:	http://pypi.python.org/packages/source/b/bsddb3/%{pname}-%{version}.tar
 URL:		http://www.argo.es/~jcea/programacion/pybsddb.htm
 BuildRequires:	db-devel >= 4.1.25
 BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Obsoletes:	bsddb3
 Obsoletes:	python-bsddb3
