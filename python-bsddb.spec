@@ -14,6 +14,7 @@ BuildRequires:	db-devel >= 4.1.25
 BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	python-modules
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-modules
 Obsoletes:	bsddb3
 Obsoletes:	python-bsddb3
@@ -42,33 +43,33 @@ załączonej dokumentacji lub na stronie WWW.
 %setup -q -n %{pname}-%{version}
 
 %build
-env CFLAGS="%{rpmcflags}" python setup.py \
+export CFLAGS="%{rpmcflags}"
+%{__python} setup.py build \
 	--berkeley-db-libdir=%{_libdir} \
 	--berkeley-db=%{_prefix} \
 	build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python -- setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2 \
 
-# shutup check-files
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/*.py
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/tests/*.py
+%py_postclean
+
+# do not include in main package tests and devel headers
+rm -rf $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/tests
+rm -rf $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/test_support.*
+rm -rf $RPM_BUILD_ROOT%{py_incdir}/bsddb3/bsddb.h
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt docs PKG-INFO
-%dir %{py_incdir}/bsddb3
+%doc *.txt
 %dir %{py_sitedir}/bsddb3
-%dir %{py_sitedir}/bsddb3/tests
-%{py_incdir}/bsddb3/bsddb.h
 %{py_sitedir}/bsddb3/*.py[co]
-%{py_sitedir}/bsddb3/tests/*.py[co]
 %attr(755,root,root) %{py_sitedir}/bsddb3/*.so
 %if "%{py_ver}" > "2.4"
 %{py_sitedir}/bsddb3-*.egg-info
