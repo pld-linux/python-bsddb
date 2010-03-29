@@ -6,12 +6,12 @@
 Summary:	Python interface for BerkeleyDB
 Summary(pl.UTF-8):	Interfejs Pythona do BerkeleyDB
 Name:		python-%{module}
-Version:	4.8.3
-Release:	2
+Version:	4.8.4
+Release:	1
 License:	BSD-like w/o adv. clause
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/bsddb3/%{pname}-%{version}.tar.gz
-# Source0-md5:	4889e849a7fc8a8cc63ed4f02b4d33fb
+# Source0-md5:	fb759684fc4b8d17b95c77b50263796b
 URL:		http://www.argo.es/~jcea/programacion/pybsddb.htm
 BuildRequires:	db-devel >= 4.1.25
 %if %{with python2}
@@ -19,9 +19,9 @@ BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	python-modules
 %endif
 %if %{with python3}
-BuildRequires:  python3
-BuildRequires:	python3-modules
+BuildRequires:	python3
 BuildRequires:	python3-devel
+BuildRequires:	python3-modules
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
