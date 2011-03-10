@@ -6,12 +6,12 @@
 Summary:	Python interface for BerkeleyDB
 Summary(pl.UTF-8):	Interfejs Pythona do BerkeleyDB
 Name:		python-%{module}
-Version:	5.1.1
+Version:	5.1.2
 Release:	1
 License:	BSD-like w/o adv. clause
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/bsddb3/%{pname}-%{version}.tar.gz
-# Source0-md5:	c13e47c18077f96381d4fb6ca18f4181
+# Source0-md5:	39a6b87af22318e2ff00b0c1b15c627c
 URL:		http://www.argo.es/~jcea/programacion/pybsddb.htm
 BuildRequires:	db-devel >= 4.1.25
 %if %{with python2}
@@ -103,9 +103,9 @@ rm -rf $RPM_BUILD_ROOT
 %py_postclean
 
 # do not include in main package tests and devel headers
-rm -rf $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/tests
-rm -rf $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/test_support.*
-rm -rf $RPM_BUILD_ROOT%{py_incdir}/bsddb3/bsddb.h
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/test_support.*
+%{__rm} -r $RPM_BUILD_ROOT%{py_incdir}/bsddb3/bsddb.h
 %endif
 
 %if %{with python3}
@@ -116,9 +116,9 @@ rm -rf $RPM_BUILD_ROOT%{py_incdir}/bsddb3/bsddb.h
 
 %py3_postclean
 # do not include in main package tests and devel headers
-rm -rf $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/tests
-rm -rf $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/test_support.*
-rm -rf $RPM_BUILD_ROOT%{py3_incdir}/bsddb3/bsddb.h
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/test_support.*
+%{__rm} -r $RPM_BUILD_ROOT%{py3_incdir}/bsddb3/bsddb.h
 %endif
 
 
