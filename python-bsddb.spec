@@ -7,7 +7,7 @@ Summary:	Python interface for BerkeleyDB
 Summary(pl.UTF-8):	Interfejs Pythona do BerkeleyDB
 Name:		python-%{module}
 Version:	5.1.2
-Release:	1
+Release:	2
 License:	BSD-like w/o adv. clause
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/bsddb3/%{pname}-%{version}.tar.gz
@@ -24,7 +24,7 @@ BuildRequires:	python3-devel
 BuildRequires:	python3-modules
 %endif
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.613
 %pyrequires_eq	python-modules
 Obsoletes:	bsddb3
 Obsoletes:	python-bsddb3
@@ -114,7 +114,6 @@ rm -rf $RPM_BUILD_ROOT
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2 \
 
-%py3_postclean
 # do not include in main package tests and devel headers
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/tests
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/test_support.*
@@ -143,6 +142,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.txt docs
 %dir %{py3_sitedir}/bsddb3
 %{py3_sitedir}/*.egg-info
-%{py3_sitedir}/bsddb3/*.py[co]
+%{py3_sitedir}/bsddb3/*.py
+%{py3_sitedir}/bsddb3/__pycache__
 %attr(755,root,root) %{py3_sitedir}/bsddb3/*.so
 %endif
