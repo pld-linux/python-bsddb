@@ -6,12 +6,12 @@
 Summary:	Python interface for BerkeleyDB
 Summary(pl.UTF-8):	Interfejs Pythona do BerkeleyDB
 Name:		python-%{module}
-Version:	5.3.0
-Release:	5
+Version:	6.1.0
+Release:	1
 License:	BSD-like w/o adv. clause
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/b/bsddb3/%{pname}-%{version}.tar.gz
-# Source0-md5:	d5aa4f293c4ea755e84383537f74be82
+# Source0-md5:	8d998ee04dc05f3808a7edfe3011decc
 URL:		http://www.argo.es/~jcea/programacion/pybsddb.htm
 BuildRequires:	db-devel >= 4.1.25
 %if %{with python2}
@@ -104,7 +104,6 @@ rm -rf $RPM_BUILD_ROOT
 
 # do not include in main package tests and devel headers
 %{__rm} -r $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/tests
-%{__rm} -r $RPM_BUILD_ROOT%{py_sitedir}/bsddb3/test_support.*
 %{__rm} -r $RPM_BUILD_ROOT%{py_incdir}/bsddb3/bsddb.h
 %endif
 
@@ -116,7 +115,6 @@ rm -rf $RPM_BUILD_ROOT
 
 # do not include in main package tests and devel headers
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/tests
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/bsddb3/test_support.*
 %{__rm} -r $RPM_BUILD_ROOT%{py3_incdir}/bsddb3/bsddb.h
 %endif
 
