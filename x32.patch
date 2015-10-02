@@ -1,0 +1,42 @@
+--- bsddb3-6.1.0/setup2.py~	2014-07-21 12:46:55.000000000 +0200
++++ bsddb3-6.1.0/setup2.py	2015-10-02 22:34:14.135486542 +0200
+@@ -206,6 +206,7 @@
+ 
+             lib_dirs = compiler.library_dirs + [
+                 '/lib64', '/usr/lib64',
++                '/libx32', '/usr/libx32',
+                 '/lib', '/usr/lib',
+             ]
+             inc_dirs = compiler.include_dirs + ['/usr/include']
+@@ -250,8 +251,10 @@
+                 # check lib directories parallel to the location of the header
+                 db_dirs_to_check = [
+                     os.path.join(db_incdir, '..', 'lib64'),
++                    os.path.join(db_incdir, '..', 'libx32'),
+                     os.path.join(db_incdir, '..', 'lib'),
+                     os.path.join(db_incdir, '..', '..', 'lib64'),
++                    os.path.join(db_incdir, '..', '..', 'libx32'),
+                     os.path.join(db_incdir, '..', '..', 'lib'),
+                 ]
+                 db_dirs_to_check = filter(os.path.isdir, db_dirs_to_check)
+--- bsddb3-6.1.0/setup3.py~	2014-07-21 12:46:55.000000000 +0200
++++ bsddb3-6.1.0/setup3.py	2015-10-02 22:34:44.585997136 +0200
+@@ -206,6 +206,7 @@
+ 
+             lib_dirs = compiler.library_dirs + [
+                 '/lib64', '/usr/lib64',
++                '/libx32', '/usr/libx32',
+                 '/lib', '/usr/lib',
+             ]
+             inc_dirs = compiler.include_dirs + ['/usr/include']
+@@ -250,8 +251,10 @@
+                 # check lib directories parallel to the location of the header
+                 db_dirs_to_check = [
+                     os.path.join(db_incdir, '..', 'lib64'),
++                    os.path.join(db_incdir, '..', 'libx32'),
+                     os.path.join(db_incdir, '..', 'lib'),
+                     os.path.join(db_incdir, '..', '..', 'lib64'),
++                    os.path.join(db_incdir, '..', '..', 'libx32'),
+                     os.path.join(db_incdir, '..', '..', 'lib'),
+                 ]
+                 db_dirs_to_check = list(filter(os.path.isdir, db_dirs_to_check))
