@@ -6,8 +6,8 @@
                  '/lib64', '/usr/lib64',
 +                '/libx32', '/usr/libx32',
                  '/lib', '/usr/lib',
+                 '/usr/lib/x86_64-linux-gnu/',
              ]
-             inc_dirs = compiler.include_dirs + ['/usr/include']
 @@ -250,8 +251,10 @@
                  # check lib directories parallel to the location of the header
                  db_dirs_to_check = [
@@ -27,8 +27,8 @@
                  '/lib64', '/usr/lib64',
 +                '/libx32', '/usr/libx32',
                  '/lib', '/usr/lib',
+                 '/usr/lib/x86_64-linux-gnu/',
              ]
-             inc_dirs = compiler.include_dirs + ['/usr/include']
 @@ -250,8 +251,10 @@
                  # check lib directories parallel to the location of the header
                  db_dirs_to_check = [
