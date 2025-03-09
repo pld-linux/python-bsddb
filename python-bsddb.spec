@@ -76,7 +76,7 @@ załączonej dokumentacji lub na stronie WWW.
 
 %prep
 %setup -q -n %{pname}-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 %build
 %if %{with python2}
